@@ -154,6 +154,7 @@ h2 {
     padding: 1em 1.5em;
     transition: 0.1s;
     min-width: 40%;
+    cursor: pointer;
 }
 
 .outlined-button {
