@@ -2,12 +2,17 @@
 <html>
 
 <head>
-	<title>Welcome to Min</title>
-	<link rel="canonical" href="https://minbrowser.org/tour/" />
-	<link rel="stylesheet" href="tour.css" />
-	<link rel="stylesheet" href="../shared.css" />
-	<link rel="stylesheet" href="../ext/font-awesome-4.5.0/css/font-awesome.min.css" />
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title id="title">Welcome to Min</title>
+	<link rel="canonical" href="https://minbrowser.org/tour/" />
+	<link rel="stylesheet" href="../css/tour.css" />
+	<link rel="stylesheet" href="../css/shared.css" />
+	<link rel="stylesheet" href="../ext/font-awesome-4.5.0/css/font-awesome.min.css" />
+	<!-- Localization -->
+	<script type="text/javascript" src="../js/json2.min.js"></script>
+	<script type="text/javascript" src="../js/l10n.min.js"></script>
+	<script type="text/javascript" src="lang/tour-l10n.js"></script>
 </head>
 
 <body>
@@ -15,12 +20,13 @@
 	<div class="hero">
 		<div class="blue-gradient-background background-block"></div>
 		<div class="centered color-white">
-			<h1 class="title-heading">Welcome to Min.</h1>
+			<h1 class="title-heading" id="welcomeToMin">Welcome to Min.</h1>
 			<div class="horizontally-centered oneline">
-				<button class="button outlined-button start-browsing-onclick" style="min-width: 0px">Start Browsing</button> &nbsp;&nbsp;&nbsp;
-				or &nbsp;&nbsp;&nbsp;
+				<button class="button outlined-button start-browsing-onclick" style="min-width: 0px"
+					id="startBrowsing">Start Browsing</button> &nbsp;&nbsp;&nbsp;
+				<span id="or">or</span> &nbsp;&nbsp;&nbsp;
 				<button class="button solid-button" id="start-tour">
-					Take a Tour
+					<span id="takeATour">Take a Tour</span>
 				</button>
 			</div>
 		</div>
@@ -30,23 +36,29 @@
 
 	<div class="section one-column">
 		<div class="column">
-			<h1>Tabs</h1>
+			<h1 id="tabsHeader">Tabs</h1>
 			<ul>
-				<li>Press <i class="fa fa-plus"></i> to create a new tab.</li>
-				<li> Hover over a tab and click the <i class="fa fa-times-circle"></i> button to delete it. </li>
-				<li>Click on the current tab to open the searchbar. </li>
-				<li>Tabs you haven't looked at in a while fade out, and brighten again when you click on them.</li>
+				<li id="tabsText1">Press <i class="fa fa-plus"></i> <span id="tabsText2">to create a new tab</span>.
+				</li>
+				<li id="tabsText3"> Hover over a tab and click the <i class="fa fa-times-circle"></i> <span
+						id="tabsText4">button to delete it.</span> </li>
+				<li id="tabsText5">Click on the current tab to open the searchbar. </li>
+				<li id="tabsText6">Tabs you haven't looked at in a while fade out, and brighten again when you click on
+					them.</li>
 			</ul>
 		</div>
 	</div>
 
 	<div class="section light-gray-background">
 		<div class="column">
-			<h1>Search</h1>
-			<p>The searchbar shows information from <a target="_blank" href="https://duckduckgo.com">DuckDuckGo</a>, including Wikipedia
-				entries, a calculator, programming documentation, and more.
+			<h1 id="searchHeader">Search</h1>
+			<p><span id="searchText1">The searchbar shows information from</span> <a target="_blank"
+					href="https://duckduckgo.com">DuckDuckGo</a>, <span id="searchText2">including Wikipedia entries, a
+					calculator, programming documentation, and more.</span>
 				<br>
-				<br> Every page you visit is automatically saved, so you can search the contents of pages as well as the title.
+				<br>
+				<span id="searchText3">Every page you visit is automatically saved, so you can search the contents of
+					pages as well as the title.</span>
 			</p>
 			<div class="arrow-spacer"></div>
 			<i class="arrow-showmore-icon fa fa-angle-double-down"></i>
@@ -57,33 +69,40 @@
 	<div class="section">
 		<img class="column" src="img/bookmarks.png" />
 		<div class="column">
-			<h1>Bookmarks</h1>
+			<h1 id="bookmarksHeader">Bookmarks</h1>
 			<p>
 				<ul>
 					<li>
-						<span data-platform="mac,linux">Go to View > Bookmarks </span>
-						<span data-platform="windows">Click the <i class="fa fa-ellipsis-v"></i> button and choose Bookmarks </span>
-						to view your bookmarks.
+						<span data-platform="mac,linux" id="bookmarksML">Go to View > Bookmarks </span>
+						<span data-platform="windows" id="bookmarksW">Click the</span> <i class="fa fa-ellipsis-v"></i>
+						<span id="bookmarksW2">button and choose Bookmarks to view your bookmarks.</span>
 					</li>
-					<li>Click the <i class="fa fa-pencil"></i> button to tag a bookmark, then use the bar at the top to filter by tag.</li>
-					<li>As you add tags, Min will start automatically suggesting tags for new pages. </li>
+					<li><span id="bookmarksText1">Click the</span> <i class="fa fa-pencil"></i> <span
+							id="bookmarksText2">to tag a bookmark, then use the bar at the top to filter by tag.</span>
+					</li>
+					<li><span id="bookmarksText3">As you add tags, Min will start automatically suggesting tags for new
+							pages.</span></li>
 				</ul>
 			</p>
-			<p>&nbsp; &nbsp; &nbsp;&nbsp; <a target="_blank" href="https://github.com/minbrowser/min/wiki#importing-bookmarks">Import your bookmarks from another browser <i class="fa fa-angle-right"></i></a>
-			<div class="arrow-spacer"></div>
-			<i class="arrow-showmore-icon fa fa-angle-double-down"></i>
+			<p>&nbsp; &nbsp; &nbsp;&nbsp; <a target="_blank"
+					href="https://github.com/minbrowser/min/wiki#importing-bookmarks" id="importBookmarks">Import your
+					bookmarks from another browser <i class="fa fa-angle-right"></i></a>
+				<div class="arrow-spacer"></div>
+				<i class="arrow-showmore-icon fa fa-angle-double-down"></i>
 		</div>
 	</div>
 
 	<div class="section light-gray-background">
 		<div class="column">
-			<h1>Tasks</h1>
-			<p>Tasks let you split your tabs into groups, letting you keep the ones you want to look at visible while hiding others in
-				the background.
+			<h1 id="tasksHeader">Tasks</h1>
+			<p id="tasksText">Tasks let you split your tabs into groups, letting you keep the ones you want to look at
+				visible while hiding others in the background.
 				<ul>
-					<li> Click the <i class="fa fa-bars"></i> button in the top-right to see all of your open tasks. </li>
-					<li>The button on the bottom lets you create a new task. </li>
-					<li>From here, you can also drag-and-drop to rearrange tabs, or click on a task's name to change it. </li>
+					<li> <span id="tasksUl1">Click the</span> <i class="fa fa-bars"></i> <span id="tasksUl2">button in
+							the top-right to see all of your open tasks.</span> </li>
+					<li id="tasksUl3">The button on the bottom lets you create a new task. </li>
+					<li id="tasksUl4">From here, you can also drag-and-drop to rearrange tabs, or click on a task's name
+						to change it. </li>
 				</ul>
 			</p>
 			<div class="arrow-spacer"></div>
@@ -93,11 +112,14 @@
 	</div>
 
 	<div class="section">
-			<img class="column" src="../splash/adblock.png" />
+		<img class="column" src="../splash/adblock.png" />
 		<div class="column">
-			<h1>Ad and tracker blocking</h1>
-			<p>Min blocks third-party ads and trackers automatically. To block everything (including first-party ads), or to disable content blocking completely, go to <span data-platform="mac">Min &gt; Preferences</span><span data-platform="windows,linux">Edit &gt; Preferences</span>. You can also choose to
-				block images and Javascript, if you are on a limited internet connection.
+			<h1 id="aTBHeader">Ad and tracker blocking</h1>
+			<p id="aTBText">Min blocks third-party ads and trackers automatically. To block everything (including
+				first-party ads), or to disable content blocking completely, go to <span data-platform="mac"
+					id="aTBText2Mac">Min &gt; Preferences</span><span data-platform="windows,linux" id="aTBText2WL">Edit
+					&gt; Preferences</span>. <span id="aTBText2">You can also choose to block images and Javascript, if
+					you are on a limited internet connection.</span>
 			</p>
 			<div class="arrow-spacer"></div>
 			<i class="arrow-showmore-icon fa fa-angle-double-down"></i>
@@ -106,11 +128,13 @@
 
 	<div class="section light-gray-background">
 		<div class="column">
-			<h1>Reading List</h1>
-			<p>Click the <i class="fa fa-align-left"></i> icon in a tab to format an article and make it easier to read. Articles opened
-				in reader view are saved in your reading list for the next 30 days, and are saved for offline reading.
+			<h1 id="readingListHeader">Reading List</h1>
+			<p id="readingListText1">Click the <i class="fa fa-align-left"></i> <span id="readingListText2">icon in a
+					tab to format an article and make it easier to read. Articles opened in reader view are saved in
+					your reading list for the next 30 days, and are saved for offline reading.</span>
 				<br>
-				<br> You can find your saved articles in the application menu: View &gt; Reading List.
+				<br> <span id="readingListText3">You can find your saved articles in the application menu: View &gt;
+					Reading List.</span>
 			</p>
 			<div class="arrow-spacer"></div>
 			<i class="arrow-showmore-icon fa fa-angle-double-down"></i>
@@ -119,28 +143,29 @@
 	</div>
 
 	<div class="section">
-		<h1>Tips and Tricks</h1>
+		<h1 id="tipsAndTricksHeader">Tips and Tricks</h1>
 		<div class="feature-grid">
 			<div class="feature-card">
 				<img src="img/focusmode.png" />
-				<h2> Focus Mode</h1>
-					<p>In focus mode, all your tabs except the current one are hidden, letting you avoid distractions. Turn on focus mode in
-						the View menu > Focus Mode.
-					</p>
+				<h2 id="focusModeHeader"> Focus Mode</h1>
+					<p id="focusModeText">In focus mode, all your tabs except the current one are hidden, letting you
+						avoid distractions. Turn on focus mode in the View > Focus Mode.</p>
 			</div>
 			<div class="feature-card">
 				<img src="img/browser_actions.png" />
-				<h2> Browser Actions</h1>
-					<p>Browser actions let you quickly do almost anything, even if you don't remember the keyboard shortcut. Type "!" in the
-						searchbar, and then type an action. You can view a list of available browser actions <a href="https://github.com/minbrowser/min/wiki#browser-actions"
-						 target="_blank">here</a>.
+				<h2 id="browserActionsHeader"> Browser Actions</h1>
+					<p id="browserActionsText">Browser actions let you quickly do almost anything, even if you don't
+						remember the keyboard shortcut. Type "!" in the
+						searchbar, and then type an action. You can view a list of available browser actions <a
+							href="https://github.com/minbrowser/min/wiki#browser-actions" target="_blank"
+							id="browserActionsLink">here</a>.
 					</p>
 			</div>
 			<div class="feature-card">
 				<img src="img/dark_mode.png" />
-				<h2> Dark Mode</h1>
-					<p>Enable dark mode from the preferences page to turn the browser dark, making it easier to see at night.
-					</p>
+				<h1 id="darkModeHeader"> Dark Mode</h1>
+				<p id="darkModeText">Enable dark mode from the preferences page to turn the browser dark, making it
+					easier to see at night.</p>
 			</div>
 
 		</div>
@@ -148,20 +173,180 @@
 
 	<div class="section one-column light-gray-background">
 		<div class="column">
-			<h1>Improving Min</h1> Min is open-source software, written in JavaScript. <a target="_blank" href="https://github.com/minbrowser/min">View the source on GitHub</a>,
-			 <a target="_blank" href="https://github.com/minbrowser/min/issues/new">suggest changes</a>, or <a href="https://github.com/minbrowser/min#contributing-translations">translate Min into your language</a>.
+			<h1 id="improvingMin">Improving Min</h1>
+			<span id="mIOSS">Min is open-source software, written in JavaScript. <a target="_blank"
+					href="https://github.com/minbrowser/min" id="linkToGithub">View the source on GitHub</a>,
+				<a target="_blank" href="https://github.com/minbrowser/min/issues/new" id="suggestChanges">suggest
+					changes</a>, <span id="or1">or</span> <a
+					href="https://github.com/minbrowser/min#contributing-translations"
+					id="contributeTranslations">translate
+					Min into your language</a>.</span>
 		</div>
 	</div>
 
 	<div class="blue-gradient-background">
 		<div class="spacer" style="height: 2em"></div>
-		<button class="button solid-button horizontally-centered start-browsing-onclick">Start Browsing</button>
+		<button class="button solid-button horizontally-centered start-browsing-onclick" id="startBrowsing2">Start
+			Browsing</button>
 		<div class="spacer" style="height: 1em"></div>
 
 	</div>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.0.min.js"
+		integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+	<script src="../js/tour.js" type="text/javascript"></script>
+	<!-- localization -->
+	<script type="text/javascript">
+		if (location.hash) {
+			String.locale = location.hash.substr(1);
+		}
+
+		var localize = function (string, fallback) {
+			var localized = string.toLocaleString();
+			if (localized !== string) {
+				return localized;
+			} else {
+				return fallback;
+			}
+		}
+
+		title = document.getElementById("title").firstChild;
+		wTM = document.getElementById("welcomeToMin").firstChild;
+		sB = document.getElementById("startBrowsing").firstChild;
+		or = document.getElementById("or").firstChild;
+		or1 = document.getElementById("or1").firstChild;
+		tAT = document.getElementById("takeATour").firstChild;
+		sB2 = document.getElementById("startBrowsing2").firstChild;
+		// Tabs
+		tbH = document.getElementById("tabsHeader").firstChild;
+		tbT1 = document.getElementById("tabsText1").firstChild;
+		tbT2 = document.getElementById("tabsText2").firstChild;
+		tbT3 = document.getElementById("tabsText3").firstChild;
+		tbT4 = document.getElementById("tabsText4").firstChild;
+		tbT5 = document.getElementById("tabsText5").firstChild;
+		tbT6 = document.getElementById("tabsText6").firstChild;
+		// Search
+		sH = document.getElementById("searchHeader").firstChild;
+		s1 = document.getElementById("searchText1").firstChild;
+		s2 = document.getElementById("searchText2").firstChild;
+		s3 = document.getElementById("searchText3").firstChild;
+		// Bookmarks
+		bH = document.getElementById("bookmarksHeader").firstChild;
+		bML = document.getElementById("bookmarksML").firstChild;
+		bW = document.getElementById("bookmarksW").firstChild;
+		bW2 = document.getElementById("bookmarksW2").firstChild;
+		bT1 = document.getElementById("bookmarksText1").firstChild;
+		bT2 = document.getElementById("bookmarksText2").firstChild;
+		bT3 = document.getElementById("bookmarksText3").firstChild;
+		iB = document.getElementById("importBookmarks").firstChild;
+		// Tasks
+		tH = document.getElementById("tasksHeader").firstChild;
+		tT = document.getElementById("tasksText").firstChild;
+		tUl1 = document.getElementById("tasksUl1").firstChild;
+		tUl2 = document.getElementById("tasksUl2").firstChild;
+		tUl3 = document.getElementById("tasksUl3").firstChild;
+		tUl4 = document.getElementById("tasksUl4").firstChild;
+		// Ad and tracker blocking
+		aTBH = document.getElementById("aTBHeader").firstChild;
+		aTBT = document.getElementById("aTBText").firstChild;
+		aTBT2Mac = document.getElementById("aTBText2Mac").firstChild;
+		aTBT2WL = document.getElementById("aTBText2WL").firstChild;
+		aTBT2 = document.getElementById("aTBText2").firstChild;
+		// Reading list
+		rLH = document.getElementById("readingListHeader").firstChild;
+		rLT1 = document.getElementById("readingListText1").firstChild;
+		rLT2 = document.getElementById("readingListText2").firstChild;
+		rLT3 = document.getElementById("readingListText3").firstChild;
+		// Tips and tricks
+		tATH = document.getElementById("tipsAndTricksHeader").firstChild;
+		// Focus mode
+		fMH = document.getElementById("focusModeHeader").firstChild;
+		fMT = document.getElementById("focusModeText").firstChild;
+		// Browser Actions
+		bAH = document.getElementById("browserActionsHeader").firstChild;
+		bAT = document.getElementById("browserActionsText").firstChild;
+		bAL = document.getElementById("browserActionsLink").firstChild;
+		// Dark mode
+		dMH = document.getElementById("darkModeHeader").firstChild;
+		dMT = document.getElementById("darkModeText").firstChild;
+		// Improving Min
+		iM = document.getElementById("improvingMin").firstChild;
+		mIOSS = document.getElementById("mIOSS").firstChild;
+		lTGH = document.getElementById("linkToGithub").firstChild;
+		sC = document.getElementById("suggestChanges").firstChild;
+		cT = document.getElementById("contributeTranslations").firstChild;
 
 
-	<script src="tour.js"></script>
+		title.nodeValue = localize("%title", title.nodeValue);
+		wTM.nodeValue = localize("%welcomeToMin", wTM.nodeValue);
+		sB.nodeValue = localize("%startBrowsing", sB.nodeValue);
+		sB2.nodeValue = localize("%startBrowsing2", sB2.nodeValue);
+		or.nodeValue = localize("%or", or.nodeValue);
+		or1.nodeValue = localize("%or1", or1.nodeValue);
+		tAT.nodeValue = localize("%takeATour", tAT.nodeValue);
+
+		tbH.nodeValue = localize("%tabsHeader", tbH.nodeValue);
+		tbT1.nodeValue = localize("%tabsText1", tbT1.nodeValue);
+		tbT2.nodeValue = localize("%tabsText2", tbT2.nodeValue);
+		tbT3.nodeValue = localize("%tabsText3", tbT3.nodeValue);
+		tbT4.nodeValue = localize("%tabsText4", tbT4.nodeValue);
+		tbT5.nodeValue = localize("%tabsText5", tbT5.nodeValue);
+		tbT6.nodeValue = localize("%tabsText6", tbT6.nodeValue);
+
+		sH.nodeValue = localize("%searchHeader", sH.nodeValue);
+		s1.nodeValue = localize("%searchText1", s1.nodeValue);
+		s2.nodeValue = localize("%searchText2", s2.nodeValue);
+		s3.nodeValue = localize("%searchText3", s3.nodeValue);
+
+		bH.nodeValue = localize("%bookmarksHeader", bH.nodeValue);
+		bML.nodeValue = localize("%bookmarksML", bML.nodeValue);
+		bW.nodeValue = localize("%bookmarksW", bW.nodeValue);
+		bW2.nodeValue = localize("%bookmarksW2", bW2.nodeValue);
+		bT1.nodeValue = localize("%bookmarksText1", bT1.nodeValue);
+		bT2.nodeValue = localize("%bookmarksText2", bT2.nodeValue);
+		bT3.nodeValue = localize("%bookmarksText3", bT3.nodeValue);
+		iB.nodeValue = localize("%importBookmarks", iB.nodeValue);
+
+		tH.nodeValue = localize("%tasksHeader", tH.nodeValue);
+		tT.nodeValue = localize("%tasksText", tT.nodeValue);
+		tUl1.nodeValue = localize("%tasksUl1", tUl1.nodeValue);
+		tUl2.nodeValue = localize("%tasksUl2", tUl2.nodeValue);
+		tUl3.nodeValue = localize("%tasksUl3", tUl3.nodeValue);
+		tUl4.nodeValue = localize("%tasksUl4", tUl4.nodeValue);
+
+		aTBH.nodeValue = localize("%aTBHeader", aTBH.nodeValue);
+		aTBT.nodeValue = localize("%aTBText", aTBT.nodeValue);
+		aTBT2Mac.nodeValue = localize("%aTBText2Mac", aTBT2Mac.nodeValue);
+		aTBT2WL.nodeValue = localize("%aTBText2WL", aTBT2WL.nodeValue);
+		aTBT2.nodeValue = localize("%aTBText2", aTBT2.nodeValue);
+
+		rLH.nodeValue = localize("%readingListHeader", rLH.nodeValue);
+		rLT1.nodeValue = localize("%readingListText1", rLT1.nodeValue);
+		rLT2.nodeValue = localize("%readingListText2", rLT2.nodeValue);
+		rLT3.nodeValue = localize("%readingListText3", rLT3.nodeValue);
+
+		tATH.nodeValue = localize("%tipsAndTricksHeader", tATH.nodeValue);
+
+		fMH.nodeValue = localize("%focusModeHeader", fMH.nodeValue);
+		fMT.nodeValue = localize("%focusModeText", fMT.nodeValue);
+
+		bAH.nodeValue = localize("%browserActionsHeader", bAH.nodeValue);
+		bAT.nodeValue = localize("%browserActionsText", bAT.nodeValue);
+		bAL.nodeValue = localize("%browserActionsLink", bAL.nodeValue);
+
+		dMH.nodeValue = localize("%darkModeHeader", dMH.nodeValue);
+		dMT.nodeValue = localize("%darkModeText", dMT.nodeValue);
+
+		iM.nodeValue = localize("%improvingMin", iM.nodeValue);
+		mIOSS.nodeValue = localize("%mIOSS", iM.nodeValue);
+		lTGH.nodeValue = localize("%linkToGithub", iM.nodeValue);
+		sC.nodeValue = localize("%suggestChanges", iM.nodeValue);
+		cT.nodeValue = localize("%contributeTranslations", iM.nodeValue);
+
+		document.documentElement.dir = localize("%locale.dir", document.documentElement.dir);
+		document.documentElement.lang = String.locale || document.documentElement.lang;
+	</script>
 </body>
 
 </html>
