@@ -26,6 +26,32 @@ function showMacDialog () {
   document.body.appendChild(dialog)
 }
 
+function showLinuxDialog (downloadLinks) {
+  var backdrop = document.createElement('div')
+  backdrop.className = 'backdrop'
+  document.body.appendChild(backdrop)
+  backdrop.addEventListener('click', function () {
+    backdrop.parentNode.removeChild(backdrop)
+    dialog.parentNode.removeChild(dialog)
+  })
+
+  var dialog = document.createElement('div')
+  dialog.className = 'dialog centered'
+  dialog.innerHTML = '\
+  <h3> For Debian-based distributions:</h3>\
+  <a id="download-deb-link"><button class="button outlined-button outlined-button-white" style="display: block; margin: auto">Download .deb</button></a>\
+  <div>Install with <pre style="display: inline-block; margin-left: 0.5em">sudo dpkg -i /path/to/download</pre> </div>\
+  <h3> For RPM-based distributions:</h3>\
+  <a id="download-rpm-link"><button id="download-rpm-button" class="button outlined-button outlined-button-white" style="display: block; margin: auto">Download .rpm</button></a>\
+  <div>Install with <pre style="display: inline-block; margin-left: 0.5em">sudo rpm -i /path/to/download --ignoreos</pre> </div>\
+  '
+
+  dialog.querySelector('#download-deb-link').href = downloadLinks.deb
+  dialog.querySelector('#download-rpm-link').href = downloadLinks.rpm
+
+  document.body.appendChild(dialog)
+}
+
 /* check if Min is available for the user's computer */
 
 var failMessage = "Min isn't supported on your OS"
@@ -34,10 +60,13 @@ var failMessage = "Min isn't supported on your OS"
 var platformMatchStrings = {
   'MacIntel': 'https://github.com/minbrowser/min/releases/download/v1.14.1/Min-v1.14.1-darwin-x64.zip',
   // electron no longer supports 32-bit linux (https://electronjs.org/blog/linux-32bit-support), so there's only a 64-bit build available
-  // As of 1.9, around 15% of Linux downloads are 32-bit, so hopefully we're just detecting support incorrectly and the 64-bit build will work
-  'Linux i686': 'https://github.com/minbrowser/min/releases/download/v1.14.1/min_1.14.1_amd64.deb',
-  'x86_64': 'https://github.com/minbrowser/min/releases/download/v1.14.1/min_1.14.1_amd64.deb',
-  'Linux aarch64': 'https://github.com/minbrowser/min/releases/download/v1.14.1/min_1.14.1_armhf.deb'
+  'Linux aarch64': 'https://github.com/minbrowser/min/releases/download/v1.14.1/min_1.14.1_armhf.deb',
+  // this could be either 32- or 64- bit, but we only have 64-bit downloads, so just display that and hope it works
+  'Linux': {
+    // there isn't an obvious way to detect deb- or rpm-based systems
+    deb: 'https://github.com/minbrowser/min/releases/download/v1.14.1/min_1.14.1_amd64.deb',
+    rpm: 'https://github.com/minbrowser/min/releases/download/v1.14.1/min-1.14.1-1.x86_64.rpm'
+  }
 }
 
 // matches against navigator.userAgent
@@ -79,7 +108,14 @@ function getDownloadLink () {
 function setupDownloadButton (button) {
   var downloadLink = getDownloadLink()
 
-  if (downloadLink) {
+  if (downloadLink instanceof Object) {
+    // we have a deb and an rpm link
+    button.parentElement.removeAttribute('href')
+    button.addEventListener('click', function () {
+      showLinuxDialog(downloadLink)
+    })
+  } else if (downloadLink) {
+    // we have a single download link
     button.parentElement.href = downloadLink
 
     // show gatekeeper instruction popup
