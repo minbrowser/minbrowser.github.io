@@ -58,23 +58,23 @@ var failMessage = "Min isn't supported on your OS"
 
 // matches against navigator.platform
 var platformMatchStrings = {
-  'MacIntel': 'https://github.com/minbrowser/min/releases/download/v1.14.1/Min-v1.14.1-darwin-x64.zip',
+  'MacIntel': 'https://github.com/minbrowser/min/releases/download/v1.15.0/Min-v1.15.0-darwin-x64.zip',
   // electron no longer supports 32-bit linux (https://electronjs.org/blog/linux-32bit-support), so there's only a 64-bit build available
-  'Linux aarch64': 'https://github.com/minbrowser/min/releases/download/v1.14.1/min_1.14.1_armhf.deb',
+  'Linux aarch64': 'https://github.com/minbrowser/min/releases/download/v1.15.0/min_1.15.0_armhf.deb',
   // this could be either 32- or 64- bit, but we only have 64-bit downloads, so just display that and hope it works
   'Linux': {
     // there isn't an obvious way to detect deb- or rpm-based systems
-    deb: 'https://github.com/minbrowser/min/releases/download/v1.14.1/min_1.14.1_amd64.deb',
-    rpm: 'https://github.com/minbrowser/min/releases/download/v1.14.1/min-1.14.1-1.x86_64.rpm'
+    deb: 'https://github.com/minbrowser/min/releases/download/v1.15.0/min_1.15.0_amd64.deb',
+    rpm: 'https://github.com/minbrowser/min/releases/download/v1.15.0/min-1.15.0-1.x86_64.rpm'
   }
 }
 
 // matches against navigator.userAgent
 var UAMatchStrings = {
-  'Win64': 'https://github.com/minbrowser/min/releases/download/v1.14.1/min-1.14.1-setup.exe',
-  'WOW64': 'https://github.com/minbrowser/min/releases/download/v1.14.1/min-1.14.1-setup.exe',
+  'Win64': 'https://github.com/minbrowser/min/releases/download/v1.15.0/min-1.15.0-setup.exe',
+  'WOW64': 'https://github.com/minbrowser/min/releases/download/v1.15.0/min-1.15.0-setup.exe',
   // neither of the 64-bit strings matched, fall back to 32-bit
-  'Windows NT': 'https://github.com/minbrowser/min/releases/download/v1.14.1/Min-v1.14.1-win32-ia32.zip'
+  'Windows NT': 'https://github.com/minbrowser/min/releases/download/v1.15.0/Min-v1.15.0-win32-ia32.zip'
 }
 
 function getDownloadLink () {
