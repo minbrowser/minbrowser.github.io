@@ -16,8 +16,8 @@
 }
 
 #releases-older-link i {
-  font-size: 1.25em;
-  margin-right: 0.25em;
+  font-size: 1.1em;
   vertical-align: middle;
-  margin-bottom: 0.2em;
+  margin-top: -0.15em;
+  display: inline-block;
 }

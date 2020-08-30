@@ -238,8 +238,10 @@ button.disabled {
 .dialog {
 	position: fixed;
 	background: #fff;
-	padding: 1em 2em 2em 2em;
+	padding: 1.25em 3em 2.5em 3em;
 	overflow: auto;
+	width: 60%;
+	max-width: 600px;
 }
 .dialog h1,
 .dialog h2 {

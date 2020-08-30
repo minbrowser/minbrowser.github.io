@@ -1,39 +1,59 @@
-function showMacDialog () {
-  var backdrop = document.createElement('div')
-  backdrop.className = 'backdrop'
-  document.body.appendChild(backdrop)
-
-  var dialog = document.createElement('div')
-  dialog.className = 'dialog centered'
-  dialog.innerHTML = '<h1>How to install Min</h1>\
-  <ul>\
-    <li>Drag Min from your Downloads folder to the Applications folder.</li>\
-    <li>Right click on Min.</li>\
-    <li>Choose "Open".</li>\
-    <li>If a warning dialog is shown, choose "Open".</li>\
-  </ul>'
-
-  var dialogButton = document.createElement('button')
-  dialogButton.className = 'button outlined-button outlined-button-white'
-  dialogButton.setAttribute('style', 'display: block; margin: auto')
-  dialogButton.textContent = 'Done'
-  dialog.appendChild(dialogButton)
-  dialogButton.addEventListener('click', function () {
-    backdrop.parentNode.removeChild(backdrop)
-    dialog.parentNode.removeChild(dialog)
-  })
-
-  document.body.appendChild(dialog)
-}
-
-function showLinuxDialog (downloadLinks) {
+function showDialogBackdrop () {
   var backdrop = document.createElement('div')
   backdrop.className = 'backdrop'
   document.body.appendChild(backdrop)
   backdrop.addEventListener('click', function () {
     backdrop.parentNode.removeChild(backdrop)
+    var dialog = document.querySelector('.dialog')
     dialog.parentNode.removeChild(dialog)
   })
+}
+
+var sponsorMessage = '\
+<div\
+    style="box-shadow: 1px 0 10px 0 rgba(0,0,0,0.3);padding: 1em 3em;margin-left: -0.75em;margin-right: -0.75em;margin-top: 2em;border-radius: 6px;">\
+    <h2 style="margin-bottom: 0.25em;margin-top: 0;"><i class="i carbon:favorite"\
+            style="color: #ff0759;margin-left: -38px;margin-right: 12px;vertical-align: text-top;"></i>Help support Min\
+    </h2>Sponsor this project to help it continue.<br><a style="margin-top: 1em; display: inline-block;"\
+        href="https://github.com/sponsors/PalmerAL" target="_blank">Sponsor on GitHub <i class="i carbon:caret-right"\
+            style="font-size: 1.3em;vertical-align: text-top;margin-top: -2px;display: inline-block;margin-left: -2px;"></i></a>\
+</div>\
+'
+
+function showMacDialog () {
+  showDialogBackdrop()
+
+  var dialog = document.createElement('div')
+  dialog.className = 'dialog centered'
+  dialog.innerHTML = '<h2>How to install</h2>\
+  <ul>\
+    <li>Drag Min from your Downloads folder to the Applications folder.</li>\
+    <li>Right click on Min.</li>\
+    <li>Choose "Open".</li>\
+    <li>If a warning dialog is shown, choose "Open".</li>\
+  </ul>' + sponsorMessage
+
+  document.body.appendChild(dialog)
+}
+
+function showWindowsDialog () {
+  showDialogBackdrop();
+
+  var dialog = document.createElement('div')
+  dialog.className = 'dialog centered'
+  dialog.innerHTML = '<h2>How to install</h2>\
+  <ul>\
+    <li>Start the installer.</li>\
+    <li>If a warning dialog is shown, choose "More Info".</li>\
+    <li>Choose "Run Anyway".</li>\
+    <li>Wait for Min to open.</li>\
+  </ul>' + sponsorMessage
+
+  document.body.appendChild(dialog)
+}
+
+function showLinuxDialog (downloadLinks) {
+  showDialogBackdrop()
 
   var dialog = document.createElement('div')
   dialog.className = 'dialog centered'
@@ -44,7 +64,7 @@ function showLinuxDialog (downloadLinks) {
   <h3> For RPM-based distributions:</h3>\
   <a id="download-rpm-link"><button id="download-rpm-button" class="button outlined-button outlined-button-white" style="display: block; margin: auto">Download .rpm</button></a>\
   <div>Install with <pre style="display: inline-block; margin-left: 0.5em">sudo rpm -i /path/to/download --ignoreos</pre> </div>\
-  '
+  ' + sponsorMessage
 
   dialog.querySelector('#download-deb-link').href = downloadLinks.deb
   dialog.querySelector('#download-rpm-link').href = downloadLinks.rpm
@@ -122,6 +142,10 @@ function setupDownloadButton (button) {
     if (navigator.platform === 'MacIntel') {
       button.addEventListener('click', function () {
         setTimeout(showMacDialog, 500)
+      }, false)
+    } else if (navigator.platform === 'Win32') {
+      button.addEventListener('click', function () {
+        setTimeout(showWindowsDialog, 500)
       }, false)
     }
   } else {
