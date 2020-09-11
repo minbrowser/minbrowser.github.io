@@ -14,7 +14,7 @@ var sponsorMessage = '\
     style="box-shadow: 1px 0 10px 0 rgba(0,0,0,0.3);padding: 1em 3em;margin-left: -0.75em;margin-right: -0.75em;margin-top: 2em;border-radius: 6px;">\
     <h2 style="margin-bottom: 0.25em;margin-top: 0;"><i class="i carbon:favorite"\
             style="color: #ff0759;margin-left: -38px;margin-right: 12px;vertical-align: text-top;"></i>Help support Min\
-    </h2>Sponsor this project to help it continue.<br><a style="margin-top: 1em; display: inline-block;"\
+    </h2>By contributing, you\'ll help Min continue receiving new features and updates. You can also be listed as a sponsor and have priority support.<br><a style="margin-top: 1em; display: inline-block;"\
         href="https://github.com/sponsors/PalmerAL" target="_blank">Sponsor on GitHub <i class="i carbon:caret-right"\
             style="font-size: 1.3em;vertical-align: text-top;margin-top: -2px;display: inline-block;margin-left: -2px;"></i></a>\
 </div>\
