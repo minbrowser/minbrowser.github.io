@@ -14,6 +14,11 @@
 	transition: 0.1s opacity;
 }
 
+i {
+	font-size: 1.25em !important;
+	vertical-align: top;
+}
+
 /* showmore arrow */
 
 .arrow-spacer {
@@ -22,11 +27,11 @@
 
 i.arrow-showmore-icon {
 	display: block;
-	font-size: 3em;
+	font-size: 2.5em !important;
 	text-align: center;
 	opacity: 0.75;
 	position: absolute;
-	bottom: 80px;
+	bottom: 125px;
 	width: 33%;
 	text-align: center;
 }
@@ -72,4 +77,12 @@ i.arrow-showmore-icon {
 
 .feature-grid > .feature-card img {
 	max-width: 100%;
+}
+
+#get-involved div {
+	position: relative;
+}
+#get-involved .list-icon {
+	position: absolute;
+	left: -2em;
 }

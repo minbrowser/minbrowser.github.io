@@ -6,8 +6,9 @@
 	<link rel="canonical" href="https://minbrowser.org/tour/" />
 	<link rel="stylesheet" href="tour.css" />
 	<link rel="stylesheet" href="../shared.css" />
-	<link rel="stylesheet" href="../ext/font-awesome-4.5.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="../ext/icons/iconfont.css"/>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -32,8 +33,8 @@
 		<div class="column">
 			<h1>Tabs</h1>
 			<ul>
-				<li>Press <i class="fa fa-plus"></i> to create a new tab.</li>
-				<li> Hover over a tab and click the <i class="fa fa-times-circle"></i> button to delete it. </li>
+				<li>Press <i class="i carbon:add"></i> to create a new tab.</li>
+				<li> Hover over a tab and click the <i class="i carbon:close"></i> button to delete it. </li>
 				<li>Click on the current tab to open the searchbar. </li>
 				<li>Tabs you haven't looked at in a while fade out, and brighten again when you click on them.</li>
 			</ul>
@@ -49,7 +50,7 @@
 				<br> Every page you visit is automatically saved, so you can search the contents of pages as well as the title.
 			</p>
 			<div class="arrow-spacer"></div>
-			<i class="arrow-showmore-icon fa fa-angle-double-down"></i>
+			<i class="arrow-showmore-icon i carbon:chevron-down"></i>
 		</div>
 		<img class="column" src="img/searchbar_duckduckgo_answers.png" />
 	</div>
@@ -62,16 +63,16 @@
 				<ul>
 					<li>
 						<span data-platform="mac,linux">Go to View > Bookmarks </span>
-						<span data-platform="windows">Click the <i class="fa fa-ellipsis-v"></i> button and choose Bookmarks </span>
+						<span data-platform="windows">Click the <i class="i carbon:overflow-menu-vertical"></i> button and choose Bookmarks </span>
 						to view your bookmarks.
 					</li>
-					<li>Click the <i class="fa fa-pencil"></i> button to tag a bookmark, then use the bar at the top to filter by tag.</li>
+					<li>Click the <i class="i carbon:edit"></i> button to tag a bookmark, then use the bar at the top to filter by tag.</li>
 					<li>As you add tags, Min will start automatically suggesting tags for new pages. </li>
 				</ul>
 			</p>
-			<p>&nbsp; &nbsp; &nbsp;&nbsp; <a target="_blank" href="https://github.com/minbrowser/min/wiki#importing-bookmarks">Import your bookmarks from another browser <i class="fa fa-angle-right"></i></a>
+			<p>&nbsp; &nbsp; &nbsp;&nbsp; <a target="_blank" href="https://github.com/minbrowser/min/wiki#importing-bookmarks">Import your bookmarks from another browser <i class="i carbon:chevron-right"></i></a>
 			<div class="arrow-spacer"></div>
-			<i class="arrow-showmore-icon fa fa-angle-double-down"></i>
+			<i class="arrow-showmore-icon i carbon:chevron-down"></i>
 		</div>
 	</div>
 
@@ -81,13 +82,43 @@
 			<p>Tasks let you split your tabs into groups, letting you keep the ones you want to look at visible while hiding others in
 				the background.
 				<ul>
-					<li> Click the <i class="fa fa-bars"></i> button in the top-right to see all of your open tasks. </li>
+					<li> Click the
+						<!-- https://github.com/minbrowser/min/blob/4cd5d911ad77eac8d49d64609f52fcc423c7fe44/index.html#L151-L178 -->
+						<svg width="13px" height="13px"
+						version="1.1"
+						viewBox="0.0 0.0 26.0 26.0"
+						fill="none"
+						stroke="none"
+						stroke-linecap="square"
+						stroke-miterlimit="10"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						xmlns="http://www.w3.org/2000/svg"
+					  >
+						<g clip-path="url(#p.0)">
+						  <path
+							fill="currentColor"
+							d="m0 0l32 0l0 4l-32 0z"
+							fill-rule="evenodd"
+						  />
+						  <path
+							fill="currentColor"
+							d="m0 11l32 0l0 4l-32 0z"
+							fill-rule="evenodd"
+						  />
+						  <path
+							fill="currentColor"
+							d="m0 22l32 0l0 4l-32 0z"
+							fill-rule="evenodd"
+						  />
+						</g>
+					  </svg>
+						button in the top-right to see all of your open tasks. </li>
 					<li>The button on the bottom lets you create a new task. </li>
 					<li>From here, you can also drag-and-drop to rearrange tabs, or click on a task's name to change it. </li>
 				</ul>
 			</p>
 			<div class="arrow-spacer"></div>
-			<i class="arrow-showmore-icon fa fa-angle-double-down"></i>
+			<i class="arrow-showmore-icon i carbon:chevron-down"></i>
 		</div>
 		<img class="column" src="img/tasks.png" />
 	</div>
@@ -100,22 +131,22 @@
 				block images and Javascript, if you are on a limited internet connection.
 			</p>
 			<div class="arrow-spacer"></div>
-			<i class="arrow-showmore-icon fa fa-angle-double-down"></i>
+			<i class="arrow-showmore-icon i carbon:chevron-down"></i>
 		</div>
 	</div>
 
 	<div class="section light-gray-background">
 		<div class="column">
-			<h1>Reading List</h1>
-			<p>Click the <i class="fa fa-align-left"></i> icon in a tab to format an article and make it easier to read. Articles opened
-				in reader view are saved in your reading list for the next 30 days, and are saved for offline reading.
+			<h1>Reader Mode</h1>
+			<p>Click the <i class="i carbon:notebook"></i> icon in a tab to format an article and make it easier to read. Reader mode removes advertisements and trackers, makes pages load faster, and removes distracting page content.
 				<br>
-				<br> You can find your saved articles in the application menu: View &gt; Reading List.
+				<br>
+				Min also lets you automatically open articles from any site in reader view. Either select "yes" on the banner at the top of the page, or click on the <i class="i carbon:settings-adjust"></i> icon at the top-right.
 			</p>
 			<div class="arrow-spacer"></div>
-			<i class="arrow-showmore-icon fa fa-angle-double-down"></i>
+			<i class="arrow-showmore-icon i carbon:chevron-down"></i>
 		</div>
-		<img class="column" src="img/reading_list.png" />
+		<img class="column" src="img/reader_mode.png" />
 	</div>
 
 	<div class="section">
@@ -124,16 +155,16 @@
 			<div class="feature-card">
 				<img src="img/focusmode.png" />
 				<h2> Focus Mode</h1>
-					<p>In focus mode, all your tabs except the current one are hidden, letting you avoid distractions. Turn on focus mode in
+					<p>Focus mode stops you from opening new tabs or tasks, letting you avoid distractions. Turn on focus mode in
 						the View menu > Focus Mode.
 					</p>
 			</div>
 			<div class="feature-card">
 				<img src="img/browser_actions.png" />
 				<h2> Browser Actions</h1>
-					<p>Browser actions let you quickly do almost anything, even if you don't remember the keyboard shortcut. Type "!" in the
+					<p>Browser actions let you quickly control the browser from the searchbar. Type "!" in the
 						searchbar, and then type an action. You can view a list of available browser actions <a href="https://github.com/minbrowser/min/wiki#browser-actions"
-						 target="_blank">here</a>.
+						 target="_blank">here</a>, or create your own <a href="https://github.com/minbrowser/min/wiki#custom-bangs" target="_blank">custom actions</a>.
 					</p>
 			</div>
 			<div class="feature-card">
@@ -142,14 +173,18 @@
 					<p>Enable dark mode from the preferences page to turn the browser dark, making it easier to see at night.
 					</p>
 			</div>
-
 		</div>
+		<a href="https://github.com/minbrowser/min/wiki" target="_blank" style="font-size:1.1em">Learn more in the wiki <i class="i carbon:chevron-right"></i></a>
 	</div>
 
 	<div class="section one-column light-gray-background">
 		<div class="column">
-			<h1>Improving Min</h1> Min is open-source software, written in JavaScript. <a target="_blank" href="https://github.com/minbrowser/min">View the source on GitHub</a>,
-			 <a target="_blank" href="https://github.com/minbrowser/min/issues/new">suggest changes</a>, or <a href="https://github.com/minbrowser/min#contributing-translations">translate Min into your language</a>.
+			<h1>Get Involved</h1>
+			<ul>
+				<li>Contribute to Min <a target="_blank" href="https://github.com/minbrowser/min">on GitHub</a>.</li>
+				<li><a href="https://github.com/minbrowser/min#contributing-translations" target="_blank">Translate Min</a> into your language, or help improve the existing translations.</li>
+				<li><a href="https://github.com/sponsors/PalmerAL" target="_blank">Sponsor me (@PalmerAL)</a> to allow me to spend more time working on Min.</li>
+				<li>Join the <a href="https://discord.gg/bRpqjJ4" target="_blank">Discord server</a> to get help using Min.</li>
 		</div>
 	</div>
 
