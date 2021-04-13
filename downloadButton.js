@@ -113,7 +113,7 @@ function getUserPlatform () {
   if (navigator.platform === 'MacIntel') {
     return 'mac'
   }
-  if (navigator.platform.toLowerCase.includes('linux')) {
+  if (navigator.platform.toLowerCase().includes('linux')) {
     return 'linux'
   }
   if (navigator.userAgent.toLowerCase().includes('win64') || navigator.userAgent.toLowerCase().includes('wow64') || navigator.userAgent.toLowerCase().includes('windows')) {
