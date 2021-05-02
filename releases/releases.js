@@ -1,5 +1,5 @@
 
-var releaseCount = 2
+var releaseCount = 5
 try {
   var n = Math.max(1, parseInt(new URLSearchParams(window.location.search).get('n')))
   if (n !== 0 && !Number.isNaN(n)) {
@@ -21,6 +21,11 @@ window.addEventListener('DOMContentLoaded', function (event) {
        var heading = document.createElement('h1')
        heading.textContent = release.name
        relContainer.appendChild(heading)
+
+       var dateHeading = document.createElement('div')
+       dateHeading.className = 'release-date'
+       dateHeading.textContent = (new Intl.DateTimeFormat(navigator.language, {month: 'long', day: 'numeric', year: 'numeric'})).format(new Date(release.created_at))
+       relContainer.appendChild(dateHeading)
 
        if (index === 0) {
            // only show download button for latest release
