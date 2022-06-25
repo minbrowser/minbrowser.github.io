@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
        var relContainer = document.createElement('div')
        relContainer.className = 'release-container'
 
-       var heading = document.createElement('h1')
+       var heading = document.createElement('h2')
        heading.textContent = release.name
        relContainer.appendChild(heading)
 
