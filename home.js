@@ -1,6 +1,6 @@
 const variants = [
-    ['a', 0.8],
-    ['b', 0.2]
+    ['a', 0.7],
+    ['c', 0.3]
 ]
 
 let chosenVariant = ''
@@ -16,17 +16,11 @@ for (let variant of variants) {
 
 document.body.classList.add('variant-' + chosenVariant)
 
-if (chosenVariant === 'b') {
-    Array.from(document.querySelectorAll('.download-button .button-label')).forEach(function(label) {
-        const platform = getUserPlatform()
-        if (platform === 'mac') {
-            label.textContent = 'Download for macOS';
-        } else if (platform === 'windows') {
-            label.textContent = 'Download for Windows';
-        } else if (platform === 'linux') {
-            label.textContent = 'Install for Linux';
-        }
-    });
+if (chosenVariant === 'c') {
+    const platform = getUserPlatform()
+    if (platform === 'windows') {
+        document.getElementById('header-image').src = 'splash/tabbar-windows.png';
+    }
 }
 
 if (window.location.hostname  === 'minbrowser.org') {
