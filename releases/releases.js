@@ -12,6 +12,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
    .then(function (releases) {
      var container = document.getElementById('releases')
      releases
+     .filter(rel => !rel.prerelease)
      .slice(0, releaseCount)
      .forEach(function (release, index) {
        // display release info
