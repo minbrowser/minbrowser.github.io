@@ -1,6 +1,6 @@
 const variants = [
-    ['a', 0.7],
-    ['c', 0.3]
+    ['v1', 0.7],
+    ['v2', 0.3]
 ]
 
 let chosenVariant = ''
@@ -16,11 +16,9 @@ for (let variant of variants) {
 
 document.body.classList.add('variant-' + chosenVariant)
 
-if (chosenVariant === 'c') {
-    const platform = getUserPlatform()
-    if (platform === 'windows') {
-        document.getElementById('header-image').src = 'splash/tabbar-windows.png';
-    }
+if (chosenVariant === 'v2') {
+    document.getElementById('homepage-v1').hidden = true
+    document.getElementById('homepage-v2').hidden = false
 }
 
 if (window.location.hostname  === 'minbrowser.org') {

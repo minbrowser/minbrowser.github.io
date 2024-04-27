@@ -1,3 +1,8 @@
+#homepage-v1:not([hidden]),
+#homepage-v2:not([hidden]) {
+	display: contents;
+}
+
 .header-image-container {
 	position: absolute;
 	top: calc(85% - 5vw);
@@ -46,11 +51,16 @@
 
 #footer #footer-links {
 	display: inline-block;
-	padding-left: 2em;
+	padding-left: 2.5em;
 }
 
 #footer #footer-links a {
 	display: block;
 	color: #222;
 	padding: 0.5em 0;
+}
+
+#footer hr {
+	border-top: 1px #ccc solid;
+	border-bottom: none;
 }
