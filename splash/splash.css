@@ -64,3 +64,37 @@
 	border-top: 1px #ccc solid;
 	border-bottom: none;
 }
+
+.menubar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 99999;
+	padding: 1.5em;
+}
+
+@media all and (max-width: 675px) {
+	.menubar {
+		display: none;
+	}
+}
+
+.menubar a {
+	padding: 0.5em 1em;
+	color: white;
+	font-weight: 500;
+	border-radius: 0.25em;
+	transition: 0.05s background;
+}
+
+.menubar a:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.menubar a img {
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	margin-bottom: -0.1em;
+	margin-right: 0.25em;
+}
