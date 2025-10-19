@@ -99,14 +99,14 @@ var failMessage = "Min isn't supported on your OS"
 
 var downloadLinks = {
   mac: {
-    intel: 'https://github.com/minbrowser/min/releases/download/v1.35.1/min-v1.35.1-mac-x86.zip',
-    arm: 'https://github.com/minbrowser/min/releases/download/v1.35.1/min-v1.35.1-mac-arm64.zip'
+    intel: 'https://github.com/minbrowser/min/releases/download/v1.35.2/min-v1.35.2-mac-x86.zip',
+    arm: 'https://github.com/minbrowser/min/releases/download/v1.35.2/min-v1.35.2-mac-arm64.zip'
   },
   linux: {
-    deb: 'https://github.com/minbrowser/min/releases/download/v1.35.1/min-1.35.1-amd64.deb',
-    rpm: 'https://github.com/minbrowser/min/releases/download/v1.35.1/min-1.35.1-x86_64.rpm'
+    deb: 'https://github.com/minbrowser/min/releases/download/v1.35.2/min-1.35.2-amd64.deb',
+    rpm: 'https://github.com/minbrowser/min/releases/download/v1.35.2/min-1.35.2-x86_64.rpm'
   },
-  windows: 'https://github.com/minbrowser/min/releases/download/v1.35.1/min-1.35.1-setup.exe'
+  windows: 'https://github.com/minbrowser/min/releases/download/v1.35.2/min-1.35.2-setup.exe'
 }
 
 function getUserPlatform () {
