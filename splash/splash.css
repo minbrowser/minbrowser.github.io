@@ -1,8 +1,3 @@
-#homepage-v1:not([hidden]),
-#homepage-v2:not([hidden]) {
-	display: contents;
-}
-
 .header-image-container {
 	position: absolute;
 	top: calc(85% - 5vw);
